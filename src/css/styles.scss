@@ -1,0 +1,55 @@
+body {
+  display: flex;
+
+  .board {
+    display: grid;
+    grid-template-rows: repeat(4, 125px);
+    grid-template-columns: repeat(4, 125px);
+    width: 500px;
+  
+    &__cell {
+      border: 2px solid blue;
+    }
+  }
+
+  .scores {
+    display: grid;
+    margin-left: 50px;
+    height: 200px;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-columns: 1fr;
+    border: 5px solid blue;
+
+    &__title {
+      text-transform: uppercase;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__points {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__fails {
+      text-transform: uppercase;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    :nth-child(n + 2) {
+      border-top: 3px dashed blue;
+    }
+  }
+}
