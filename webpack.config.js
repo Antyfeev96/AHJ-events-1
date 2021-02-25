@@ -2,9 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-
-
-
 /*
  * We've enabled MiniCssExtractPlugin for you. This allows your app to
  * use css modules that will be moved into a separate CSS file instead of inside
@@ -17,9 +14,6 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-
-
-
 
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
@@ -35,41 +29,41 @@ module.exports = {
 
   plugins: [
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({ filename:'main.[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: 'main.[contenthash].css' }),
     new HtmlWebpackPlugin({
-              template: 'index.html'
-            }),
-    new ESLintPlugin()
+      template: 'index.html',
+    }),
+    new ESLintPlugin(),
   ],
 
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
       include: [path.resolve(__dirname, 'src')],
-      loader: 'babel-loader'
+      loader: 'babel-loader',
     }, {
       test: /.(sa|sc|c)ss$/,
 
       use: [{
-        loader: MiniCssExtractPlugin.loader
+        loader: MiniCssExtractPlugin.loader,
       }, {
-        loader: "css-loader",
+        loader: 'css-loader',
 
         options: {
-          sourceMap: true
-        }
+          sourceMap: true,
+        },
       }, {
-        loader: "sass-loader",
+        loader: 'sass-loader',
 
         options: {
-          sourceMap: true
-        }
-      }]
-    }]
+          sourceMap: true,
+        },
+      }],
+    }],
   },
 
   devServer: {
     open: true,
-    host: 'localhost'
-  }
-}
+    host: 'localhost',
+  },
+};
