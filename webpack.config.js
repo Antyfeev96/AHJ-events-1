@@ -39,7 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({
               template: 'index.html'
             }),
-    new ESLintPlugin(options)
+    new ESLintPlugin()
   ],
 
   module: {
