@@ -2,7 +2,7 @@ export default class GameController {
   constructor(gameplay) {
     this.gamePlay = gameplay;
     this.goblin = document.createElement('img');
-    this.goblin.src = 'https://github.com/netology-code/ahj-homeworks/raw/simplification/dom/pic/goblin.png';
+    this.goblin.src = 'src/images/goblin.png';
     this.goblin.alt = 'goblin';
     this.gamePlay.renderBoard();
     this.gamePlay.renderScores();
