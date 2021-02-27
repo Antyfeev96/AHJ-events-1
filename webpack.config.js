@@ -37,29 +37,44 @@ module.exports = {
   ],
 
   module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      include: [path.resolve(__dirname, 'src')],
-      loader: 'babel-loader',
-    }, {
-      test: /.(sa|sc|c)ss$/,
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        include: [path.resolve(__dirname, 'src')],
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /.(sa|sc|c)ss$/,
 
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-      }, {
-        loader: 'css-loader',
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
 
-        options: {
-          sourceMap: true,
-        },
-      }, {
-        loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
 
-        options: {
-          sourceMap: true,
-        },
-      }],
-    }],
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
 
   devServer: {
