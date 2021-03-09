@@ -48,8 +48,8 @@ export default class GameController {
 
   endGame() {
     alert('You lose!');
-    clearInterval(this.interval);
     this.gamePlay.setPointsToZero();
+    clearInterval(this.interval);
     this.goblin.remove();
     return false;
   }
