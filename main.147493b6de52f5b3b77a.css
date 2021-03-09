@@ -1,0 +1,39 @@
+body {
+  display: flex; }
+  body .board {
+    display: grid;
+    grid-template-rows: repeat(4, 125px);
+    grid-template-columns: repeat(4, 125px);
+    width: 500px; }
+    body .board__cell {
+      border: 2px solid blue; }
+  body .scores {
+    display: grid;
+    margin-left: 50px;
+    height: 200px;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-columns: 1fr;
+    border: 5px solid blue; }
+    body .scores__title {
+      text-transform: uppercase;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    body .scores__points {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    body .scores__fails {
+      text-transform: uppercase;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    body .scores__count {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    body .scores :nth-child(n + 2) {
+      border-top: 3px dashed blue; }
+
