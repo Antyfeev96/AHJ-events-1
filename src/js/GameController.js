@@ -7,8 +7,8 @@ export default class GameController {
     this.gamePlay.renderBoard();
     this.gamePlay.renderScores();
     this.cells = Array.from(document.getElementsByClassName('board__cell'));
-    this.scoresEl = +this.gamePlay.body.querySelector('.scores__points').textContent;
-    this.failsEl = +this.gamePlay.body.querySelector('.scores__count').textContent;
+    this.scoresEl = this.gamePlay.getScorePoints();
+    this.failsEl = +this.gamePlay.getScoreFails();
   }
 
   init() {
@@ -49,6 +49,7 @@ export default class GameController {
   endGame() {
     alert('You lose!');
     clearInterval(this.interval);
+    this.gamePlay.setPointsToZero();
     this.goblin.remove();
     return false;
   }

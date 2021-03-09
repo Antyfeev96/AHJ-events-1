@@ -35,4 +35,17 @@ export default class GamePlay {
         </div>
         `;
   }
+
+  getScorePoints() {
+    return +this.body.querySelector('.scores__points').textContent;
+  }
+
+  getScoreFails() {
+    return +this.body.querySelector('.scores__count').textContent;
+  }
+
+  setPointsToZero() {
+    this.body.querySelector('.scores__points').textContent = 0;
+    this.body.querySelector('.scores__count').textContent = 0;
+  }
 }
